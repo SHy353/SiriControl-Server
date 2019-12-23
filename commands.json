@@ -1,0 +1,12 @@
+{
+  "commands": {
+    "tv": {
+      "required": ["turn", "tv"],
+      "options": ["on", "off"]
+    },
+    "volume": {
+      "required": ["turn", "volume"],
+      "options": ["up", "down"]
+    }
+  }
+}
