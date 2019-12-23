@@ -2,7 +2,7 @@ import socketio
 
 # standard Python
 sio = socketio.Client()
-token = "e9491f80-a457-445e-a3b1-36d18f4e2e57"
+token = "a598fbce-7cc7-4240-ad35-0b86b2651c59"
 sio.connect('http://localhost:5000?token=' + token)
 
 

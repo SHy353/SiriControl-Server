@@ -3,6 +3,7 @@ from flask_socketio import SocketIO
 import os
 import json
 from main import SiriControl
+import keepAlive
 
 app = Flask(__name__)
 socket = SocketIO(app)
@@ -62,6 +63,7 @@ if __name__ == '__main__':
     if (username == None or password == None):
         print("No username or password found. Please set these environment variables.")
     else:
+        keepAlive.start()
         c = SiriControl(callback, username, password)
         c.start()
         socket.run(app, debug=False)
