@@ -68,7 +68,7 @@ if __name__ == '__main__':
     if (username == None or password == None):
         print("No username or password found. Please set these environment variables.")
     else:
-        keepAlive.start()
+        # keepAlive.start()
         c = SiriControl(callback, username, password)
         c.start()
-        socket.run(app, debug=False)
+        socket.run(app, debug=False, host="0.0.0.0", port=os.getenv("PORT"))
