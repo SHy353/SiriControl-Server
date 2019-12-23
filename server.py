@@ -9,6 +9,11 @@ app = Flask(__name__)
 socket = SocketIO(app)
 
 
+@app.route('/')
+def main():
+    return "SiriControl is running"
+
+
 def authenticate(token):
     if token != os.getenv("SECRETID"):
         return False
@@ -59,11 +64,12 @@ def callback(spokenText):
 if __name__ == '__main__':
     username = os.getenv("USER")
     password = os.getenv("PASSWORD")
+    port = os.getenv("PORT")
 
     if (username == None or password == None):
         print("No username or password found. Please set these environment variables.")
     else:
-        keepAlive.start()
+        # keepAlive.start()
         c = SiriControl(callback, username, password)
         c.start()
-        socket.run(app, debug=False)
+        socket.run(app, debug=False, port=port)
