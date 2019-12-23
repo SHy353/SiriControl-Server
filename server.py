@@ -64,12 +64,11 @@ def callback(spokenText):
 if __name__ == '__main__':
     username = os.getenv("USER")
     password = os.getenv("PASSWORD")
-    port = os.getenv("PORT")
 
     if (username == None or password == None):
         print("No username or password found. Please set these environment variables.")
     else:
-        # keepAlive.start()
+        keepAlive.start()
         c = SiriControl(callback, username, password)
         c.start()
-        socket.run(app, debug=False, port=port)
+        socket.run(app, debug=False)
