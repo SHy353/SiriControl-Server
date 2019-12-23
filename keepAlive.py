@@ -7,7 +7,7 @@ app = Flask('')
 
 @app.route('/')
 def main():
-    return "SiriControl is up and running."
+    return "Hi."
 
 
 def run():
