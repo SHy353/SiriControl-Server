@@ -1,7 +1,7 @@
 {
   "commands": {
-    "tv": {
-      "required": ["turn", "tv"],
+    "lights": {
+      "required": ["turn", "lights"],
       "options": ["on", "off"]
     },
     "volume": {
