@@ -2,6 +2,7 @@ from flask import Flask, request
 from flask_socketio import SocketIO
 import os
 import json
+import imaplib
 from main import SiriControl
 import keepAlive
 
@@ -70,6 +71,11 @@ if __name__ == '__main__':
         print("No username or password found. Please set these environment variables.")
     else:
         # keepAlive.start()
-        c = SiriControl(callback, username, password)
-        c.start()
-        socket.run(app, debug=False, port=port)
+        try:
+            mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
+            mail.login(username, password)
+            c = SiriControl(callback, mail)
+            c.start()
+            socket.run(app, debug=False, port=port)
+        except Exception as e:
+            print(e)

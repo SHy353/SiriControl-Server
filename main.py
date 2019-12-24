@@ -7,13 +7,12 @@ from threading import Thread
 
 
 class SiriControl(Thread):
-    def __init__(self, callback, username, password):
+    def __init__(self, callback, mail):
         Thread.__init__(self)
         self.callback = callback
+        self.mail = mail
         try:
             self.last_checked = -1
-            self.mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
-            self.mail.login(username, password)
             self.mail.list()
             self.mail.select("Notes")
 
