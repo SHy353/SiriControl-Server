@@ -29,6 +29,7 @@ class SiriControl(Thread):
         self.mail.list()
         self.mail.select("Notes")
         result, uidlist = self.mail.search(None, "ALL")
+        print(uidlist)
         try:
             latest_email_id = uidlist[0].split()[-1]
         except IndexError:

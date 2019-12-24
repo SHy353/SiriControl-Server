@@ -74,6 +74,7 @@ if __name__ == '__main__':
         try:
             mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
             mail.login(username, password)
+            print("Login Successful.")
             c = SiriControl(callback, mail)
             c.start()
             socket.run(app, debug=False, host="0.0.0.0", port=port)
