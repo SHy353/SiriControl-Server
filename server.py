@@ -65,17 +65,17 @@ def callback(spokenText):
 if __name__ == '__main__':
     username = os.getenv("USER")
     password = os.getenv("PASSWORD")
-    # port = os.getenv("PORT")
+    port = os.getenv("PORT")
 
     if (username == None or password == None):
         print("No username or password found. Please set these environment variables.")
     else:
-        keepAlive.start()
+        # keepAlive.start()
         try:
             mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
             mail.login(username, password)
             c = SiriControl(callback, mail)
             c.start()
-            socket.run(app, debug=False, host="0.0.0.0", port=5000)
+            socket.run(app, debug=False, host="0.0.0.0", port=port)
         except Exception as e:
             print(e)
