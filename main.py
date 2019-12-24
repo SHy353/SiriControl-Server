@@ -29,7 +29,6 @@ class SiriControl(Thread):
         self.mail.list()
         self.mail.select("Notes")
         result, uidlist = self.mail.search(None, "ALL")
-        print(uidlist)
         try:
             latest_email_id = uidlist[0].split()[-1]
         except IndexError:
@@ -41,6 +40,7 @@ class SiriControl(Thread):
         self.last_checked = latest_email_id
         result, data = self.mail.fetch(latest_email_id, "(RFC822)")
         voice_command = email.message_from_string(data[0][1].decode('utf-8'))
+        print(voice_command)
         return str(voice_command.get_payload()).lower().strip()
 
     def run(self):
