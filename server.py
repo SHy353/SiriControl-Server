@@ -76,6 +76,6 @@ if __name__ == '__main__':
             mail.login(username, password)
             c = SiriControl(callback, mail)
             c.start()
-            socket.run(app, debug=False, port=5000)
+            socket.run(app, debug=False, host="0.0.0.0", port=5000)
         except Exception as e:
             print(e)

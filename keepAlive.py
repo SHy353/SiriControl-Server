@@ -11,7 +11,7 @@ def main():
 
 
 def run():
-    app.run(debug=False, port=os.getenv("PORT"))
+    app.run(debug=False, host="0.0.0.0", port=os.getenv("PORT"))
 
 
 def start():
