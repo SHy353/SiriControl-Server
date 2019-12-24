@@ -1,0 +1,7 @@
+{
+  "name": "SiriControl Server",
+  "description": "Do more with Siri.",
+  "repository": "https://github.com/thesanjeetc/SiriControl-Server",
+  "logo": "https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/spaces%2F-LwXo0D7y02UmYe99qwj%2Favatar.png?generation=1576843488057646&alt=media",
+  "keywords": ["siri", "flask", "python", "cloud"]
+}
