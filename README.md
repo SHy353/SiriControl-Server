@@ -1,3 +1,6 @@
-# SiriControl-Server
+# SiriControl Server
 
-Work In Progress -> Check out the local version: https://medium.com/@thesanjeetc/want-to-control-something-with-siri-heres-how-bae98aceb586?
+Do more with Siri. 
+
+For more info, see http://siricontrol.live/ .
+.
