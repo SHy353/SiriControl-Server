@@ -4,7 +4,6 @@ import os
 import json
 import imaplib
 from main import SiriControl
-import keepAlive
 
 app = Flask(__name__)
 socket = SocketIO(app)
